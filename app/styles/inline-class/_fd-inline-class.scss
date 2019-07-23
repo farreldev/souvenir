@@ -1,0 +1,875 @@
+.fd-txt-light { color: $color-light; }
+.fd-txt-grey { color: $color-grey; }
+.fd-txt-green { color: $color-green; }
+.fd-txt-orange { color: $color-orange; }
+.fd-txt-blue { color: $color-blue; }
+.fd-txt-light-blue { color: $color-light-blue; }
+.fd-txt-dark { color: $color-dark; }
+.fd-txt-mid-dark { color: $color-mid-dark; }
+.fd-txt-deep-dark { color: $color-deep-dark; }
+.fd-txt-deep-blood { color: darken($color-blood, 25%); }
+
+.fd-blur {
+  transition: all .5s ease;
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
+}
+
+.fd-position-relative {
+  position: relative;
+}
+
+.fd-right-hide {
+  transform: translateX(101%);
+}
+
+.fd-left-hide {
+  transform: translateX(-100%);
+}
+
+.fd-transition-all {
+  transition: all .3s ease-in-out;
+}
+
+@keyframes animateScaleIn {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes showup {
+  0% { 
+    opacity: 0;
+    transform: scale(.5)
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+@keyframes showdown {
+  0% { 
+    opacity: 1;
+    transform: scale(1)
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0)
+  }
+}
+
+@for $n from 1 through 10 {
+  .fd-line-height#{20 + $n} {
+    line-height: #{20 + $n}px;
+  }
+  .fd-zIndex#{1 * $n} {
+    z-index: #{1 * $n};
+  }
+}
+
+.fd-txt-center {
+  text-align: center;
+}
+
+.fd-txt-left {
+  text-align: left;
+}
+
+.fd-txt-right {
+  text-align: right;
+}
+
+.fd-bold { font-weight: 700; }
+
+
+// .fd-template-columns {
+  // grid-template-columns:   
+// }
+
+
+//----- Background Color
+
+.fd-bg-light-gradient {
+  background: rgb(204,204,204);
+  background: -moz-linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(248,248,248,1) 71%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(248,248,248,1) 71%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(0deg, rgba(204,204,204,1) 0%, rgba(248,248,248,1) 71%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc",endColorstr="#ffffff",GradientType=1);
+}
+
+.fd-bg-purple {
+  background: #7F00FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.fd-bg-mid-dark {
+  transition: background-color .3s ease;
+  background-color: $color-mid-dark;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-mid-dark, 10%);
+  }
+}
+
+.fd-bg-dark {
+  transition: background-color .3s ease;
+  background-color: $color-dark;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: lighten($color-dark, 10%);
+  }
+}
+
+.fd-diamonds {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/icons/diamonds.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  margin: 0 auto 25px;
+  span {
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    position: relative;
+    padding: 0 20px;
+
+    &:before, &:after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 6px;
+      position: absolute;
+      top: -12px;
+      border-top: 1px solid $color-purple;
+      // border-bottom: 1px solid $color-purple;
+    }
+
+    &:before { right: 110%; }
+    &:after { left: 110%; }
+  }
+  &.white {
+    background-image: url('../images/icons/diamonds-white.png');
+    span {
+      &:before, &:after {
+        border-top: 1px solid $color-light;
+        border-bottom: 1px solid $color-light; 
+      }
+    }
+  }
+}
+
+.fd-bg-deep-dark {
+  transition: background-color .3s ease;
+  background-color: $color-deep-dark;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: lighten($color-deep-dark, 10%);
+  }
+}
+
+.fd-bg-brown {
+  transition: background-color .3s ease;
+  background-color: $color-brown;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: lighten($color-brown, 10%);
+  }
+}
+
+.fd-bg-light {
+  transition: background-color .3s ease;
+  background-color: $color-light;
+  // &:hover {
+  //   transition: background-color .3s ease;
+  //   background-color: darken($color-light, 10%);
+  // }
+}
+
+.fd-bg-mid-light {
+  transition: background-color .3s ease;
+  background-color: $color-mid-light;
+  // &:hover {
+  //   transition: background-color .3s ease;
+  //   background-color: darken($color-mid-light, 10%);
+  // }
+}
+
+.fd-bg-ayootrack {
+  transition: background-color .3s ease;
+  background-color: $color-ayootrack;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-ayootrack, 10%);
+  }
+}
+
+.fd-bg-light-grey {
+  transition: background-color .3s ease;
+  background-color: $color-light-grey;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-light-grey, 10%);
+  }
+}
+
+.fd-bg-light-blue {
+  transition: background-color .3s ease;
+  background-color: $color-light-blue;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-light-blue, 10%);
+  }
+}
+
+.fd-bg-blue {
+  transition: background-color .3s ease;
+  background-color: $color-blue;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-blue, 10%);
+  }
+}
+
+.fd-bg-blue-navy {
+  transition: background-color .3s ease;
+  background-color: $color-blue-navy;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-blue-navy, 10%);
+  }
+}
+
+.fd-bg-green-blue {
+  transition: background-color .3s ease;
+  background-color: $color-green-blue;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-green-blue, 10%);
+  }
+}
+
+.fd-bg-dark-blue {
+  transition: background-color .3s ease;
+  background-color: $color-dark-blue;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-dark-blue, 10%);
+  }
+}
+
+.fd-bg-purple {
+  transition: background-color .3s ease;
+  background-color: $color-purple;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-purple, 10%);
+  }
+}
+
+.fd-bg-green {
+  transition: background-color .3s ease;
+  background-color: $color-green;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-green, 10%);
+  }
+}
+
+.fd-bg-yellow {
+  transition: background-color .3s ease;
+  background-color: $color-yellow;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-yellow, 10%);
+  }
+}
+
+.fd-bg-light-green {
+  transition: background-color .3s ease;
+  background-color: $color-light-green;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-light-green, 5%);
+  }
+}
+
+.fd-bg-orange {
+  transition: background-color .3s ease;
+  background-color: $color-orange;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-orange, 10%);
+  }
+}
+
+.fd-bg-tosqa {
+  transition: background-color .3s ease;
+  background-color: $color-tosqa;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-tosqa, 10%);
+  }
+}
+
+.fd-bg-blood {
+  transition: background-color .3s ease;
+  background-color: $color-blood;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-blood, 10%);
+  }
+}
+
+.fd-bg-soundcloud {
+  transition: background-color .3s ease;
+  background-color: $color-soundcloud;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-soundcloud, 10%);
+  }
+}
+
+.fd-bg-soundcloud-gradient {
+  background: #fe8c00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f83600, #fe8c00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f83600, #fe8c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.fd-bg-ayooservice {
+  transition: background-color .3s ease;
+  background-color: $color-ayooservice;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-ayooservice, 10%);
+  }
+}
+
+.fd-bg-ayooklik {
+  transition: background-color .3s ease;
+  background-color: $color-ayooklik;
+  &:hover {
+    transition: background-color .3s ease;
+    background-color: darken($color-ayooklik, 10%);
+  }
+}
+//----- End Background Color
+
+//----- Background Blend
+.fd-bg-blend-overlay {
+  background-blend-mode: overlay;
+}
+
+.fd-bg-blend-color-burn {
+  background-blend-mode: color-burn;
+}
+
+.fd-bg-blend-multiply {
+  background-blend-mode: multiply;
+}
+//----- End Background Blend
+
+.fd-bg-cover {
+  background-size: cover;
+}
+
+//----- Background Position
+.fd-bg-pos-centerx {
+  background-position-x: center;
+}
+
+.fd-bg-pos-centery {
+  background-position-y: center;
+}
+//----- End Background Position
+
+.fd-obj-fit-cov {
+  object-fit: cover;
+}
+
+.fd-scale-1 {
+  transform: scale(1);
+}
+
+//----- Overlay Before
+.fd-overlay-before {
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+  }
+  &--black-gradient {
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: rgb(0,0,0);
+      background: -moz-linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%);
+      background: -webkit-linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    }
+  }
+  &--soundcloud {
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $color-soundcloud;
+    }
+  }
+  &--grey {
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $color-grey;
+      opacity: .5;
+    }
+  }
+  &--blood {
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $color-blood;
+      opacity: .5;
+    }
+  }
+}
+//----- End Overlay Before
+
+.fd-line-dark {
+  border-color: $color-dark;
+}
+.fd-line-orange {
+  border-color: $color-orange;
+}
+
+.fd-line-purple {
+  border-color: $color-purple;
+}
+.fd-line-tosqa {
+  border-color: $color-tosqa;
+}
+
+.fd-wrapper {
+  position: relative;
+  .fd-slot {
+    position: inherit;
+  }
+}
+
+.fd-caption {
+  position: relative;
+}
+
+.fd-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.fd-img-circle {
+  border-radius: 50%;
+}
+
+.fd-content-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.fd-center-abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fd-center-horz {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fd-center-vert {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fd-fit-content {
+  width: fit-content;
+}
+
+.fd-max-content {
+  width: max-content;
+}
+
+@each $val in $type-pos {
+  .fd-#{$val} {
+      position: #{$val};
+  }
+}
+
+@for $i from 1 through $offset {
+  // Radius
+  .fd-radius#{5 * $i} {
+    border-radius: #{5px * $i}
+  }
+}
+
+@for $i from 1 through $offset {
+  // Margin -
+  .fd-mg-#{5 * $i} {
+    margin: -#{5px * $i}
+  }
+
+  
+  @each $value in $position {
+    @if $value == top {
+      .fd-mgt-#{5 * $i} {
+        margin-#{$value}: -#{5px * $i}
+      }
+      .fd-#{$value}-#{1 * $i} {
+        #{$value}: -#{1px * $i};
+      }
+      .fd-#{$value}-#{5 * $i} {
+        #{$value}: -#{5px * $i};
+      }
+    }
+    @else if $value == right {
+      .fd-mgr-#{5 * $i} {
+        margin-#{$value}: -#{5px * $i}
+      }
+      .fd-#{$value}-#{1 * $i} {
+        #{$value}: -#{1px * $i};
+      }
+      .fd-#{$value}-#{5 * $i} {
+        #{$value}: -#{5px * $i};
+      }
+    }
+    @else if $value == bottom {
+      .fd-mgb-#{5 * $i} {
+        margin-#{$value}: -#{5px * $i}
+      }
+      .fd-#{$value}-#{1 * $i} {
+        #{$value}: -#{1px * $i};
+      }
+      .fd-#{$value}-#{5 * $i} {
+        #{$value}: -#{5px * $i};
+      }
+    }
+    @else if $value == left {
+      .fd-mgl-#{5 * $i} {
+        margin-#{$value}: -#{5px * $i}
+      }
+      .fd-#{$value}-#{1 * $i} {
+        #{$value}: -#{1px * $i};
+      }
+      .fd-#{$value}-#{5 * $i} {
+        #{$value}: -#{5px * $i};
+      }
+    }
+  }
+
+  // Margin +
+  .fd-mg#{5 * $i} {
+    margin: #{5px * $i}
+  }
+
+  .fd-mg-vert#{5 * $i} {
+    margin: #{5px * $i} 0;
+  }
+
+  .fd-mg-horz#{5 * $i} {
+    margin: 0 #{5px * $i};
+  }
+  
+  @each $value in $position {
+    .fd-#{$value} {
+      #{$value}: 0;
+    }
+    @if $value == top {
+      .fd-mgt#{5 * $i} {
+        margin-#{$value}: #{5px * $i}
+      }
+      .fd-#{$value}#{1 * $i} {
+        #{$value}: #{1px * $i};
+      }
+      .fd-#{$value}#{5 * $i} {
+        #{$value}: #{5px * $i};
+      }
+    }
+    @else if $value == right {
+      .fd-mgr#{5 * $i} {
+        margin-#{$value}: #{5px * $i}
+      }
+      .fd-#{$value}#{1 * $i} {
+        #{$value}: #{1px * $i};
+      }
+      .fd-#{$value}#{5 * $i} {
+        #{$value}: #{5px * $i};
+      }
+    }
+    @else if $value == bottom {
+      .fd-mgb#{5 * $i} {
+        margin-#{$value}: #{5px * $i}
+      }
+      .fd-#{$value}#{1 * $i} {
+        #{$value}: #{1px * $i};
+      }
+      .fd-#{$value}#{5 * $i} {
+        #{$value}: #{5px * $i};
+      }
+    }
+    @else if $value == left {
+      .fd-mgl#{5 * $i} {
+        margin-#{$value}: #{5px * $i}
+      }
+      .fd-#{$value}#{1 * $i} {
+        #{$value}: #{1px * $i};
+      }
+      .fd-#{$value}#{5 * $i} {
+        #{$value}: #{5px * $i};
+      }
+    }
+  }
+  // Padding -
+  .fd-pd-#{5 * $i} {
+    padding: -#{5px * $i}
+  }
+  
+  @each $value in $position {
+    @if $value == top {
+      .fd-pdt-#{5 * $i} {
+        padding-#{$value}: -#{5px * $i}
+      }
+    }
+    @else if $value == right {
+      .fd-pdr-#{5 * $i} {
+        padding-#{$value}: -#{5px * $i}
+      }
+    }
+    @else if $value == bottom {
+      .fd-pdb-#{5 * $i} {
+        padding-#{$value}: -#{5px * $i}
+      }
+    }
+    @else if $value == left {
+      .fd-pdl-#{5 * $i} {
+        padding-#{$value}: -#{5px * $i}
+      }
+    }
+  }
+
+  // Padding +
+  .fd-pd#{5 * $i} {
+    padding: #{5px * $i}
+  }
+
+  .fd-pd-vert#{5 * $i} {
+    padding-top: #{5px * $i};
+    padding-bottom: #{5px * $i};
+  }
+
+  .fd-pd-horz#{5 * $i} {
+    padding-left: #{5px * $i};
+    padding-right: #{5px * $i};
+  }
+  
+  @each $value in $position {
+    @if $value == top {
+      .fd-pdt#{5 * $i} {
+        padding-#{$value}: #{5px * $i}
+      }
+    }
+    @else if $value == right {
+      .fd-pdr#{5 * $i} {
+        padding-#{$value}: #{5px * $i}
+      }
+    }
+    @else if $value == bottom {
+      .fd-pdb#{5 * $i} {
+        padding-#{$value}: #{5px * $i}
+      }
+    }
+    @else if $value == left {
+      .fd-pdl#{5 * $i} {
+        padding-#{$value}: #{5px * $i}
+      }
+    }
+  }
+}
+
+.fd-no-padding {
+  padding: 0;
+}
+
+.fd-no-margin {
+  margin: 0;
+}
+
+// Display
+.fd-flex { display: flex; }
+.fd-grid { display: grid; }
+.fd-block { display: block; }
+.fd-ln-block { display: inline-block; }
+.fd-table { display: table; }
+.fd-tcell { display: table-cell; }
+.fd-trow { display: table-row; }
+
+.fd-vert-mid {
+  vertical-align: middle;
+}
+
+.fd-flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.fd-dir-col {
+  flex-direction: column;
+}
+
+@for $x from 1 through $offset - 10 {
+  .fd-flex-#{$x} {
+    flex: #{$x};
+  }
+}
+
+// .fd-flex-1 {
+//   flex: 1;
+// }
+
+.fd-center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fd-uppercase {
+  text-transform: uppercase;
+}
+
+.fd-cursor-pointer {
+  cursor: pointer;
+}
+
+@for $i from 1 through $offset + 20 {
+  .fd-width#{2 * $i} {
+    width: #{2 * $i}px;
+  }
+}
+
+.fd-full-width {
+  width: 100%;
+}
+
+.fd-full-height {
+  height: 100%;
+}
+
+.fd-half-width {
+  width: 50%;
+}
+
+.fd-half-height {
+  height: 50%;
+}
+
+@for $i from 1 through $offset {
+  .fd-max-width#{50 * $i} {
+    max-width: #{50 * $i}px;
+  }
+
+  .fd-max-height#{50 * $i} {
+    max-height: #{50 * $i}px;
+  }
+  .fd-min-width#{50 * $i} {
+    min-width: #{50 * $i}px;
+  }
+
+  .fd-min-height#{50 * $i} {
+    min-height: #{50 * $i}px;
+  }
+}
+
+// Font Size
+
+@for $i from 1 through 30 {
+  .fd-fz#{1 * $i} {
+    font-size: #{1 * $i}px;
+  }
+}
+
+@for $i from 1 through $offset {
+  .fd-fz#{8 * $i} {
+    font-size: #{8 * $i}px;
+  }
+}
+
+@include shortBreakpointMax(480) {
+  @for $i from 1 through $offset {
+    .fd-fzm#{8 * $i} {
+      font-size: #{8 * $i}px;
+    }
+  }
+}
+
+.fd-visible-hide {
+  visibility: hidden;
+}
+
+.fd-overflow-hidden {
+  overflow: hidden;
+}
+
+.fd-divider {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.fd-link-light {
+  color: $color-light;
+}
+
+.fd-link-no-underline {
+  text-decoration: none;
+}
+
+.fd-hover-white {
+  &:hover {
+    color: $txt-light;
+  }
+}

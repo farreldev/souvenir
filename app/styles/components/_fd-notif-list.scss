@@ -1,0 +1,19 @@
+ul.fd-notif-list {
+  height: 100%;
+  li {
+    position: relative;
+    padding: 10px;
+    color: darken($color-light, 25%);
+    font-size: 15px;
+    line-height: 1.5;
+    background-color: rgba(255,255,255,.07);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    &:first-child {
+      margin-top: 15px;
+    }
+    &:last-child {
+      margin-bottom: 15px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+ul.listApps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  li {
+    padding: 15px 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    font-family: $font2;
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(0,0,0,.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 2px 5px -2px rgba(0,0,0,.15);
+    figure {
+      img {
+        width: 32px;
+      }
+    }
+    > div:not(:nth-of-type(2)) {
+      flex: 1;
+      padding-left: 10px;
+      p {
+        font-size: 12px;
+      }
+    }
+    
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 5px 12px -1px rgba(0,0,0,.3);
+    }
+
+    &.notAvailable {
+      background-color: rgba(255,255,255,.1);
+      border: 1px solid #f0f0f0;
+      figure {
+        img {
+          opacity: .2;
+        }
+      }
+      > div:not(:nth-of-type(2)) {
+        flex: 1;
+        padding-left: 10px;
+        p {
+          color: #cecece;
+        }
+      }
+      .fd-checkbox-custom {
+        div {
+          opacity: .3;
+        }
+      }
+      &:hover {
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+    }
+  }
+}

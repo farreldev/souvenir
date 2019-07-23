@@ -1,0 +1,299 @@
+.fd-checkbox-custom {
+	.toggleButton {
+		cursor: pointer;
+		display: block;
+		transform-origin: 50% 50%;
+		transform-style: preserve-3d;
+		transition: transform .14s ease;
+		&:active {
+			transform: rotateX(30deg);
+		}
+		input {
+			display: none;
+			& + div {
+				// border: 3px solid rgba($color-green, .2);
+				border: 3px solid rgba($color-grey, .2);
+				border-radius: 50%;
+				position: relative;
+				width: 27px;
+				height: 27px;
+				svg {
+					fill: none;
+					stroke-width: 3.6;
+					stroke: lighten($color-grey, 30%);
+					stroke-linecap: round;
+					stroke-linejoin: round;
+					width: 27px;
+					height: 27px;
+					display: block;
+					position: absolute;
+					left: -3px;
+					top: -3px;
+					right: -3px;
+					bottom: -3px;
+					z-index: 1;
+					stroke-dashoffset: 162.6 - 38;
+					stroke-dasharray: 0 162.6 133 (162.6 - 133);
+					transition: all .4s ease 0s;
+				}
+				&:before,
+				&:after {
+					content: '';
+					width: 3px;
+					height: 11px;
+					background: $color-blood;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					border-radius: 5px;
+				}
+				&:before {
+					opacity: 0;
+					transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+					animation: bounceInBefore .3s linear forwards .3s;
+				}
+				&:after {
+					opacity: 0;
+					transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+					animation: bounceInAfter .3s linear forwards .3s;
+				}
+			}
+			&:checked + div {
+				svg {
+					stroke: $color-green;
+					stroke-dashoffset: 162.6;
+					stroke-dasharray: 0 162.6 28 (162.6 - 28);
+					transition: all .4s ease .2s;
+				}
+				&:before {
+					opacity: 0;
+					transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+					animation: bounceInBeforeDont .3s linear forwards 0s;
+				}
+				&:after {
+					opacity: 0;
+					transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+					animation: bounceInAfterDont .3s linear forwards 0s;
+				}
+			}
+		}
+	}
+
+	@keyframes bounceInBefore {
+			0% {
+				opacity: 0;
+				transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+			}
+			50%{
+				opacity: 0.9;
+				transform: scale(1.1) translate(-50%, -50%) rotate(45deg);
+			}
+			80%{
+				opacity: 1;
+				transform: scale(.89) translate(-50%, -50%) rotate(45deg);
+			}
+			100%{
+				opacity: 1;
+				transform: scale(1) translate(-50%, -50%) rotate(45deg);
+			}
+	}
+
+	@keyframes bounceInAfter {
+			0% {
+				opacity: 0;
+				transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+			}
+			50%{
+				opacity: 0.9;
+				transform: scale(1.1) translate(-50%, -50%) rotate(-45deg);
+			}
+			80%{
+				opacity: 1;
+				transform: scale(.89) translate(-50%, -50%) rotate(-45deg);
+			}
+			100%{
+				opacity: 1;
+				transform: scale(1) translate(-50%, -50%) rotate(-45deg);
+			}
+	}
+
+	@keyframes bounceInBeforeDont {
+			0% {
+				opacity: 1;
+				transform: scale(1) translate(-50%, -50%) rotate(45deg);
+			}
+			100%{
+				opacity: 0;
+				transform: scale(.3) translate(-50%, -50%) rotate(45deg);
+			}
+	}
+
+	@keyframes bounceInAfterDont {
+			0% {
+				opacity: 1;
+				transform: scale(1) translate(-50%, -50%) rotate(-45deg);
+			}
+			100%{
+				opacity: 0;
+				transform: scale(.3) translate(-50%, -50%) rotate(-45deg);
+			}
+	}
+
+	html {
+		box-sizing: border-box;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	* {
+			box-sizing: inherit;
+			&:before,
+			&:after {
+				box-sizing: inherit;
+			}
+	}
+}
+
+.material-frm {
+  width: 100%;
+  .group-field {
+    position: relative;
+    // height: 72px;
+		// padding: 16px 0 0;
+		&:last-child {
+			margin-bottom: 15px;
+		}
+		i {
+			transform: translateY(47px);
+			color: rgba(0,0,0,.3);
+			font-size: 16px;
+		}
+		a.showPassword {
+			outline: none;
+			position: absolute;
+			right: 0;
+			z-index: 2;
+		}
+    .label-field {
+			margin: 0;
+      text-transform: capitalize;
+      line-height: 16px;
+      font-size: 15px;
+      display: block;
+			color: rgba(0,0,0,.3);
+			font-family: $font1;
+      font-weight: 500;
+      transform: translateY(30px) translateX(30px);
+      transition: transform .3s ease-in-out;
+      transform-origin: left top;
+    }
+    .input-field {
+			padding: 15px 0 15px 30px;
+      height: 45px;
+      width: 100%;
+      border: none;
+			font-family: $font1;
+      font-size: 16px;
+      line-height: 16px;
+			color: $color-dark;
+      display: block;
+			outline: none;
+		}
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: #ddd;
+		}
+    &::after {
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease-in-out;
+    }
+	}
+
+	input[type='submit'].btn {
+		border-radius: 50px;
+		border: none;
+		box-shadow: 0 7px 18px -7px rgba(0, 0, 0, 0.7)
+	}
+  
+  .group-select {
+    position: relative;
+    .select-text {
+      position: relative;
+    }
+  }
+
+  .in-text label.label-field {
+    transform: translateY(5px) scale(.75);
+  }
+  
+  .in-focused label.label-field {
+    color: $color-dark;
+  }
+  
+  .group-field.in-focused::after {
+    transform: scaleX(1);
+    background-color: $color-light-blue;
+  }
+}
+
+.fd-subscribe-frm {
+	.fd-group-field {
+		position: relative;
+		width: 540px;
+		height: 50px;
+		margin: 0 auto;
+		border-radius: 100px;
+		background-color: $color-light;
+		z-index: 2;
+		input[type=text] {
+			background: transparent;
+			width: calc(100% - 150px);
+			font-size: 18px;
+			padding: 0 10px 0 25px;
+			height: 100%;
+			border: none;
+			outline: none;
+			border-radius: 4px;
+		}
+		input[type=submit] {
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			padding: 10px 20px;
+			min-width: 130px;
+			font-size: 18px;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			color: $color-light;
+			background-color: $color-soundcloud;
+			border-radius: 100px;
+			transform: translateY(-50%);
+		}
+		&:after {
+			position: absolute;
+			content: '';
+			top: -8px;
+			left: -8px;
+			width: 556px;
+			height: 66px;
+			border-radius: 100px;
+			background-color: rgba(255,255,255,.18);
+			z-index: -1;
+		}
+		@include shortBreakpointMax(480) {
+			width: 100%;
+			input[type=text] {
+				width: 100%;
+			}
+			&:after {
+				width: calc(100% + 16px);
+			}
+		}
+	}
+}

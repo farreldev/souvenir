@@ -1,0 +1,86 @@
+.arrowNavigation {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  .prevArrowNav,
+  .nextArrowNav {
+    position: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    font-family: fontawesome;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    // border: 1px solid #aeaeae
+    // color: #fff
+    color: #333333;
+    // +border-radius(5px)
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    background-color: rgba(255, 255, 255, 0.75);
+    // background-color: $poison
+    &:focus {
+      outline: none;
+    }
+    i {
+      transition: all .3s ease;
+      font-size: 23px;
+      line-height: 50px;
+    }
+    &:hover {
+      // background-color: darken(rgba(255, 255, 255, 9), 10%);
+      transition: all .3s ease;
+      background-color: $color-purple;
+      i {
+        transition: all .3s ease;
+        color: $color-light;
+        // color: white
+     
+      }
+    }
+    @include shortBreakpointMax(480) {
+      i {
+        line-height: 36.5px;
+      }
+    }
+  }
+  .prevArrowNav {
+    transition: left 0.4s ease;
+    left: -55px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  .nextArrowNav {
+    transition: right 0.4s ease;
+    right: -55px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  &.openArrow {
+    .prevArrowNav {
+      left: 30px;
+    }
+    .nextArrowNav {
+      right: 30px;
+    }
+  }
+}
+
+.fd-carousel {
+  width: 100%;
+  .item {
+    outline: none;
+    max-height: 600px;
+    figure {
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

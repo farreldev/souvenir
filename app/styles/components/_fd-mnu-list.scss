@@ -1,0 +1,64 @@
+div.fd-mnu-list {
+  padding: 10px 0 10px 10px;
+  div {
+    cursor: pointer;
+    font-family: $font1;
+    font-size: 15px;
+    // background-color: tomato;
+    // color: rgba(0,0,0,.7);
+    overflow: hidden;
+    color: #fff;
+    p {
+      color: #fff;
+    }
+    &.hasSub {
+      margin-bottom: 15px;
+      ul {
+        position: relative;
+        display: none;
+        margin-top: 10px;
+        margin-left: 15px;
+        &:before {
+          position: absolute;
+          left: -10px;
+          content: '';
+          width: 1px;
+          height: calc(100% - 18px);
+          border-left: 1px dotted rgba(255,255,255,.3);
+        }
+        li {
+          // background-color: orange;
+          position: relative;
+          margin-bottom: 1px;
+          padding: 10px 0 10px 5px;
+          color: rgba(255,255,255,.7);
+          font-size: 13px;
+          &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%);
+            width: 7px;
+            height: 1px;
+            border-bottom: 1px dotted rgba(255,255,255,.3);
+            // background-color: rgba(255,255,255,.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+.fd-tab-container {
+  // margin-top: 25px;
+  width: 100%;
+  .fd-tab-item {
+    padding: 15px 10px;
+    display: none;
+    width: 100%;
+    &.fd-use {
+      display: block;
+    }
+  }
+}

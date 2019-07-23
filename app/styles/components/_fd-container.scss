@@ -1,0 +1,32 @@
+.fd-container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  @include shortBreakpointMin(576) {
+    max-width: 540px;
+  }
+  @include shortBreakpointMin(768) {
+    max-width: 720px;
+  }
+  @include shortBreakpointMin(992) {
+    max-width: 960px;
+  }
+  @include shortBreakpointMin(1200) {
+    max-width: 1140px;
+  }
+  // @include shortBreakpointMin(1920) {
+  //   max-width: 1600px;
+  // }
+}
+
+.fd-container-full {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  @include shortBreakpointMin(1600) {
+    max-width: 1140px;
+  }
+  @include shortBreakpointMin(1366) {
+    max-width: 1140px;
+  }
+}

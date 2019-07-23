@@ -1,0 +1,88 @@
+a.btn,
+button.btn,
+input[type='button'].btn,
+input[type='submit'].btn {
+  display: inline-block;
+	padding: 8px 15px 7px;
+	font-family: $font2;
+	font-size: 15px;
+	font-weight: 500;
+	color: $color-light;
+	letter-spacing: .15px;
+	text-decoration: none;
+	outline: none;
+	// background: #f2f2f2;
+	// border: 2px solid $color-light;
+	border-width: 2px;
+	border-style: solid;
+	border-color: $color-light;
+	border-radius: 50px;
+	vertical-align: middle;
+	&.add {
+		position: relative;
+		padding: 0;
+		width: 40px;
+		height: 40px;
+		&:before, &:after {
+			position: absolute;
+			content: '';
+			background-color: $color-light;
+		}
+		&:before {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 18px;
+			height: 2px;
+		}
+		&:after {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 2px;
+			height: 18px;
+		}
+	}
+	&.btn-blue {
+		background-color: $color-blue;
+		&:hover {
+			background-color: darken($color-blue, 10%);
+		}
+	}
+	&.btn-purple {
+		background-color: $color-purple;
+		&:hover {
+			background-color: darken($color-purple, 10%);
+		}
+	}
+	&.btn-soundcloud {
+		background-color: $color-soundcloud;
+		&:hover {
+			background-color: darken($color-soundcloud, 10%);
+		}
+	}
+	&.btn-light-blue {
+		background-color: $color-light-blue;
+		&:hover {
+			background-color: darken($color-light-blue, 10%);
+		}
+	}
+	&.fd-line-orange {
+		@extend .fd-line-orange;
+		color: $color-orange;
+	}
+	&.fd-line-purple {
+		@extend .fd-line-purple;
+		color: $color-purple;
+		&:hover {
+			background-color: $color-purple;
+			color: $color-light;
+		}
+	}
+	&.fd-line-tosqa {
+		@extend .fd-line-tosqa;
+	}
+	&.fd-line-dark {
+		@extend .fd-line-dark;
+	}
+}

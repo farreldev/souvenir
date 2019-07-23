@@ -1,0 +1,41 @@
+.fd-badge {
+  position: absolute;
+  top: -12px;
+  left: -5px;
+  background-color: $color-soundcloud;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  color: $color-light;
+  line-height: 25px;
+  font-size: 12px;
+  box-sizing: border-box;
+  font-weight: 600;
+  z-index: 3;
+  // &:before {
+  //   position: inherit;
+  //   bottom: -15px;
+  //   left: 10px;
+  //   content: '';
+  //   width: 0;
+  //   height: 0;
+  //   transform-origin: top right;
+  //   transform: rotate(22deg);
+  //   border-left: 8px solid transparent;
+  //   border-right: 8px solid transparent;
+  //   border-top: 20px solid red;
+  //   z-index: 2;
+  // }
+}
+
+.announcement {
+  .fd-badge {
+    top: -14px;
+    left: 18px;
+    background-color: $color-light-green;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+}

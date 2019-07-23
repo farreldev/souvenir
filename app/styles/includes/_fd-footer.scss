@@ -1,0 +1,10 @@
+footer {
+  padding: 20px 0;
+  font-family: $font3;
+  letter-spacing: .15px;
+  font-size: 13px;
+  text-align: center;
+  color: rgba($color-light, .7);
+  // background-color: $color-dark;
+  @extend .fd-bg-purple;
+}

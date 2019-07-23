@@ -1,0 +1,100 @@
+.fd-line-gradient {
+  width: 100%;
+  height: 5px;
+  @extend .fd-bg-purple;
+}
+header.header-pages {
+  height: 70px;
+  box-shadow: 0 1px 10px -1px rgba(0,0,0,.15);
+  z-index: 4;
+  position: relative;
+  // @extend .fd-bg-purple;
+  .fd-wrapper {
+    margin: 0 auto;
+    width: 1140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+      figure.brand {
+        width: 150px;
+        display: inline-block;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+    .center {
+      display: inline-block;
+      nav {
+        ul {
+          li {
+            position: relative;
+            margin: 0 10px;
+            display: inline-block;
+            height: 70px;
+            a {
+              font-family: $font2;
+              font-size: 18px;
+              text-decoration: none;
+              line-height: 70px;
+              color: $color-dark;
+              &:hover {
+                color: $color-purple;
+              }
+            }
+            &.fd-current {
+              &:after {
+                position: absolute;
+                bottom: 0px;
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: $color-purple;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .right {
+      a.contact {
+        text-decoration: none;
+        color: $color-dark;
+        img {
+          display: inline-block;
+          vertical-align: middle;
+          width: 16px;
+        }
+        span {
+          font-size: 16px;
+        }
+      }
+      .humburgerBtn {
+        width: 23px;
+        display: none;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    @include breakpoint(310, 479) {
+      padding: 0 15px;
+      width: 100%;
+      .center {
+        display: none;
+      }
+      .right {
+        a.contact {
+          display: none;
+        }
+        .humburgerBtn {
+          display: block;
+        }
+      }
+    }
+  }
+}

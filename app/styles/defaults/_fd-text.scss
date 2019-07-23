@@ -1,0 +1,31 @@
+h1, h2, h3, h4, h5, h6, p, a, li, div, span {
+  font-family: $font3;
+}
+
+@for $i from 1 through $offset - 14 {
+  h#{1 * $i} {
+    font-size: #{62 - (8 * ($i - 1))}px;
+  }
+}
+
+h3 {
+  font-family: $font1;
+  margin-bottom: 5px;
+  color: $color-mid-dark;
+  &.white {
+    color: $color-light;
+  }
+}
+
+p {
+  font-family: $font3;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: .05px;
+  margin-bottom: 20px;
+  color: $txt-darkgrey;
+  &.small {;
+    color: $txt-darkgrey;
+    font-size: 14px;
+  }
+}
